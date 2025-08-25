@@ -8,11 +8,14 @@ const Login = () => {
         <LoginForm />
       </div>
 
-      <div className="flex-1 bg-gradient-to-br from-blue-900 to-blue-950 flex items-center justify-center p-8 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.1),transparent_50%)]"></div>
-
-        <Image src="/login.png" alt="login image" width={500} height={500} />
+      <div className="flex-1 relative rounded-[15px] bg-[#000842]">
+        <Image
+          className="absolute left-1/2 -translate-x-1/2 -top-1/3 translate-y-2/3"
+          src="/login.png"
+          alt="login image"
+          width={400}
+          height={400}
+        />
       </div>
     </div>
   );
