@@ -35,11 +35,11 @@ export default function QuickTransfer() {
       <h3 className="text-xl font-semibold text-[#343C6A] mb-4">
         Quick Transfer
       </h3>
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 w-full h-full max-w-sm h-full">
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 w-full h-full max-w-sm">
         {/* User Selection */}
         <div className="relative mb-6">
           <div className="flex items-center space-x-4 overflow-x-auto pb-2">
-            {users.map((user, index) => (
+            {users.map((user) => (
               <div
                 key={user.id}
                 className={`flex flex-col items-center cursor-pointer transition-all duration-200 flex-shrink-0`}
