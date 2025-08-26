@@ -4,6 +4,7 @@ import ExpenseStatisticsChart from "@/components/PagesComponent/dashboard/Expens
 import QuickTransfer from "@/components/PagesComponent/dashboard/QuickTransfer";
 import TransactionCard from "@/components/PagesComponent/dashboard/TransactionCard";
 import WeeklyActivityChart from "@/components/PagesComponent/dashboard/WeeklyActivityChart";
+import Link from "next/link";
 
 export default function Page() {
   const cards = [
@@ -24,12 +25,15 @@ export default function Page() {
   ];
   return (
     <div className="flex flex-1 flex-col">
-      <div className="@container/main flex flex-1 flex-col gap-2 px-4 md:px-10">
+      <div className="@container/main flex flex-1 flex-col gap-2 py-4 md:px-10">
         <div className="grid grid-cols-1 gap-4 xl:grid-cols-3">
-          <div className="col-span-2">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Your Cards
-            </h2>
+          <div className="xl:col-span-2">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-bold text-[#343C6A]">My Cards</h2>
+              <Link href="/" className="text-[#343C6A] text-sm">
+                See more
+              </Link>
+            </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {cards.map((card) => (
                 <CreditCard
@@ -49,13 +53,13 @@ export default function Page() {
             </div>
           </div>
           <div className="col-span-1">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            <h2 className="text-xl font-bold text-[#343C6A] mb-4">
               Add New Card
             </h2>
             <TransactionCard />
           </div>
         </div>
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 mt-8">
           <div className="col-span-2">
             <WeeklyActivityChart />
           </div>
@@ -63,7 +67,7 @@ export default function Page() {
             <ExpenseStatisticsChart />
           </div>
         </div>
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 mt-8">
           <div className="col-span-1">
             <QuickTransfer />
           </div>

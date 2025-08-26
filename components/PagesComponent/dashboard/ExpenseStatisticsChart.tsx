@@ -90,31 +90,30 @@ export default function ExpenseStatisticsChart() {
   ];
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 w-full max-w-sm">
-      <h3 className="text-xl font-semibold text-gray-800 mb-6">
+    <div>
+      <h3 className="text-xl font-semibold text-[#343C6A] mb-4">
         Expense Statistics
       </h3>
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 w-full h-full max-w-sm">
+        <div
+          ref={chartRef}
+          style={{ width: "100%", height: "260px" }}
+          className="min-h-[260px]"
+        />
 
-      {/* ECharts container */}
-      <div
-        ref={chartRef}
-        style={{ width: "100%", height: "280px" }}
-        className="min-h-[280px]"
-      />
-
-      {/* Legend */}
-      <div className="mt-4 grid grid-cols-2 gap-3">
-        {expenseData.map((item, index) => (
-          <div key={index} className="flex items-center space-x-2">
-            <div
-              className="w-3 h-3 rounded-full flex-shrink-0"
-              style={{ backgroundColor: item.color }}
-            ></div>
-            <span className="text-sm text-gray-600 font-medium">
-              {item.name}
-            </span>
-          </div>
-        ))}
+        <div className="mt-4 grid grid-cols-2 gap-3">
+          {expenseData.map((item, index) => (
+            <div key={index} className="flex items-center space-x-2">
+              <div
+                className="w-3 h-3 rounded-full flex-shrink-0"
+                style={{ backgroundColor: item.color }}
+              ></div>
+              <span className="text-xs text-gray-600 font-medium">
+                {item.name}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

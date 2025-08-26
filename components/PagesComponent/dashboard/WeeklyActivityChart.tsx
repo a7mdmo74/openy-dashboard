@@ -116,29 +116,32 @@ export default function WeeklyActivityChart() {
   }, []);
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 w-full">
-      <div className="flex justify-between items-center mb-6">
-        <h3 className="text-xl font-semibold text-gray-800">Weekly Activity</h3>
-
-        {/* Legend */}
-        <div className="flex items-center space-x-6">
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-teal-400 rounded-full"></div>
-            <span className="text-sm text-gray-600">Deposit</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-            <span className="text-sm text-gray-600">Withdraw</span>
+    <div>
+      <h3 className="text-xl font-semibold text-[#343C6A] mb-4">
+        Weekly Activity
+      </h3>
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 w-full h-full">
+        <div className="flex justify-between items-center mb-6">
+          {/* Legend */}
+          <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-2">
+              <div className="w-3 h-3 bg-teal-400 rounded-full"></div>
+              <span className="text-sm text-gray-600">Deposit</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+              <span className="text-sm text-gray-600">Withdraw</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* ECharts container */}
-      <div
-        ref={chartRef}
-        style={{ width: "100%", height: "280px" }}
-        className="min-h-[280px]"
-      />
+        {/* ECharts container */}
+        <div
+          ref={chartRef}
+          style={{ width: "100%", height: "280px" }}
+          className="min-h-[280px]"
+        />
+      </div>
     </div>
   );
 }
