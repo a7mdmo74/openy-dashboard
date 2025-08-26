@@ -21,24 +21,47 @@ export function NavMain({
   }[];
 }) {
   const pathname = usePathname();
+
   return (
-    <SidebarGroup>
-      <SidebarGroupContent className="flex flex-col gap-2">
-        <SidebarMenu>
+    <SidebarGroup className="p-0">
+      <SidebarGroupContent className="p-0 py-0">
+        <SidebarMenu className="gap-1">
           {items.map((item) => {
             const isActive = pathname === item.url;
             return (
-              <SidebarMenuItem key={item.title}>
-                <Link href={item.url}>
+              <SidebarMenuItem key={item.title} className="relative">
+                {/* Blue accent bar for active state */}
+                {isActive && (
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-600 rounded-r-full z-10" />
+                )}
+                <Link href={item.url} className="w-full">
                   <SidebarMenuButton
                     tooltip={item.title}
                     isActive={isActive}
-                    className={
-                      isActive ? "bg-blue-500 text-white hover:bg-blue-600" : ""
-                    }
+                    className={`
+                      w-full h-12 px-8 py-3 transition-all duration-200
+                      flex items-center gap-3 text-left relative
+                      ${
+                        isActive
+                          ? "text-blue-600 !bg-transparent"
+                          : "text-[#B1B1B1] hover:bg-gray-50 hover:text-gray-700"
+                      }
+                    `}
                   >
-                    {item.icon && <item.icon />}
-                    <span>{item.title}</span>
+                    {item.icon && (
+                      <item.icon
+                        className={`w-5 h-5 shrink-0 ${
+                          isActive ? "text-[#1814F3]" : "text-[#B1B1B1]"
+                        }`}
+                      />
+                    )}
+                    <span
+                      className={`font-medium text-base leading-none ${
+                        isActive ? "text-[#1814F3]" : "text-[#B1B1B1]"
+                      }`}
+                    >
+                      {item.title}
+                    </span>
                   </SidebarMenuButton>
                 </Link>
               </SidebarMenuItem>

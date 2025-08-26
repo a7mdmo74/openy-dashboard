@@ -24,11 +24,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   navMain: [
     {
       title: "Dashboard",
@@ -108,12 +103,12 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="offcanvas" {...props}>
-      <SidebarHeader>
-        <SidebarMenu>
+    <Sidebar collapsible="offcanvas" {...props} className="p-0">
+      <SidebarHeader className="p-0">
+        <SidebarMenu className="h-[98px] flex items-center justify-center">
           <SidebarMenuItem>
             <Link href="/">
-              <Image src="/logo.png" alt="Logo" width={150} height={120} />
+              <Image src="/logo.png" alt="Logo" width={150} height={150} />
             </Link>
           </SidebarMenuItem>
         </SidebarMenu>
