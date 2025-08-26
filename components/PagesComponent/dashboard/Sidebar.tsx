@@ -108,7 +108,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu className="h-[98px] flex items-center justify-center">
           <SidebarMenuItem>
             <Link href="/">
-              <Image src="/logo.png" alt="Logo" width={150} height={150} />
+              <Image
+                src="/bankdash-logo.png"
+                alt="Logo"
+                width={150}
+                height={150}
+              />
             </Link>
           </SidebarMenuItem>
         </SidebarMenu>

@@ -145,7 +145,12 @@ export default function LoginForm() {
   return (
     <div className="w-full max-w-md mx-auto mt-16 md:mt-0 flex flex-col justify-center bg-white">
       <div className="flex items-center gap-2">
-        <Image src="/logo.png" alt="Logo Image" width={150} height={100} />
+        <Image
+          src="/bankdash-logo.png"
+          alt="Logo Image"
+          width={150}
+          height={100}
+        />
       </div>
       <div className="p-1 mt-4 md:p-8">
         <div className="mb-8">
