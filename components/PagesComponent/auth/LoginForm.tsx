@@ -10,7 +10,6 @@ import { Eye, EyeOff, Mail, Lock, CheckCircle, XCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useAuth } from "@/context/auth";
-import { useRouter } from "next/navigation";
 
 const loginSchema = yup.object({
   email: yup
@@ -46,8 +45,8 @@ const DUMMY_USERS = [
     id: 3,
     email: "demo@test.com",
     password: "demo123",
-    name: "Demo User",
     role: "user",
+    name: "Demo User",
   },
 ];
 
@@ -84,8 +83,7 @@ const authenticateUser = async (
 };
 
 export default function LoginForm() {
-  const router = useRouter();
-  const { user, login, isAuthenticated } = useAuth();
+  const { login } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [authMessage, setAuthMessage] = useState<{
