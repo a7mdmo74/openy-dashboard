@@ -50,7 +50,6 @@ const TransactionCard = () => {
             key={transaction.id}
             className="flex items-center justify-between"
           >
-            {/* Icon and Details */}
             <div className="flex items-center space-x-3">
               <div
                 className={`w-12 h-12 ${transaction.bgColor} rounded-full flex items-center justify-center`}
@@ -65,7 +64,6 @@ const TransactionCard = () => {
               </div>
             </div>
 
-            {/* Amount */}
             <div
               className={`font-semibold text-sm ${getAmountColor(
                 transaction.amount

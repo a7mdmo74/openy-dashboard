@@ -6,7 +6,7 @@ import TransactionCard from "@/components/PagesComponent/dashboard/TransactionCa
 import WeeklyActivityChart from "@/components/PagesComponent/dashboard/WeeklyActivityChart";
 import Link from "next/link";
 
-export default function Page() {
+export default function DashboardPage() {
   const cards = [
     {
       id: 1,
@@ -25,7 +25,7 @@ export default function Page() {
   ];
   return (
     <div className="flex flex-1 flex-col">
-      <div className="@container/main flex flex-1 flex-col gap-2 py-4 md:px-10">
+      <div className="@container/main flex px-4 flex-1 flex-col gap-2 py-4 md:px-10">
         <div className="grid grid-cols-1 gap-4 xl:grid-cols-3">
           <div className="xl:col-span-2">
             <div className="flex items-center justify-between mb-4">
